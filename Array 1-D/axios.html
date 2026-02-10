@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weather Practice Problem</h1>
+    <input placeholder="Enter City Name" class="input">
+    <button class = "button">GO</button>
+    <div class="container"></div>
+
+
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            let input = document.querySelector(".input");
+            let container = document.querySelector(".container");
+            let btn = document.querySelector(".button");
+            btn.addEventListener("click",()=>{
+                
+                axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=21d7b40f0f48215a06b193f52c95e15a&units=metric`)
+                .then(response=> {
+                    response.data.name = input.value;
+                    console.log(response.data.name);
+                    console.log(response.data.main.temp);
+                });
+
+            })
+
+        </script>
+
+</html>
