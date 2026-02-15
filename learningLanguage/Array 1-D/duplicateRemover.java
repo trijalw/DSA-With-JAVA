@@ -32,6 +32,7 @@ public class duplicateRemover {
         for (int i = 0; i < count; i++) {
             System.out.println(n[i] +" ");
         }
+        System.out.println(count);
     }
 }
 
