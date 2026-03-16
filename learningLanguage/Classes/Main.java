@@ -76,7 +76,7 @@ public class Main {
         String modelName= sc.nextLine();
         int currentSpeed = sc.nextInt();
         
-        Concrete v = new Concrete(chass,modelName,currentSpeed);
+        Concrete v = new Concrete(chass,modelName,currentSpeed); // concrete ka variable deske andhar concrete ka object ha
         v.displayInfo();
         v.startEngine();
         v.accerelate(50);
