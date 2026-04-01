@@ -6,9 +6,6 @@ class Node {
         this.data = data;
         this.next = null;
     }
-
-    
-
 };
 
 class Link  {
@@ -114,7 +111,7 @@ class Link  {
             
 
         }
-        if (temp.next==null) {
+        if (temp ==null) {
             System.out.println("Position does not exist");
             return;
         }
@@ -138,7 +135,42 @@ class Link  {
         }
         System.out.println("Element not present in list");
     }
+    void Reverse() {
+        Node prev = null;
+        Node temp = head;
+        Node tempo;
+        while (temp != null) {
+            tempo = temp.next;  // Store the next
+            temp.next = prev;   // Reverse the link
+            prev = temp;        // store current in prev
+            temp = tempo;       // move current ahead
+        }
+        head = prev;
+        Traverse();
+    }
+    // Detect cycle in linked list
+    void Cycle() {
+        
+    }
 
+    // Middle of the Linked List
+    void Middle() {
+        Node temp = head;
+        int pos = 0;
+        Node tempo = head;
+        while (temp!=null) {
+            pos ++;
+            temp = temp.next;
+        }
+        pos = pos /2;
+        while (pos>-1) {
+            if (pos==0) {
+                System.out.println(tempo.data);
+            }
+            tempo = tempo.next;
+            pos--;
+        }
+    }
 
 }
 
@@ -158,7 +190,12 @@ class linked {
         link.Traverse();
         link.deleteNodeAtPosition(2);
         link.Traverse();
-        
+        link.Reverse();
+        link.InsertionAtEnd(3);
+        link.InsertionAtEnd(10);
+        link.InsertionAtEnd(50);
+        link.Traverse();
+        link.Middle();
     }
 
     // size tracking do afterwards after learning time complexity
